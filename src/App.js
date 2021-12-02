@@ -1,23 +1,286 @@
-import logo from './logo.svg';
-import './App.css';
+import { select } from "d3-selection";
+import "d3-transition";
+import React from "react";
+import ReactWordcloud from "react-wordcloud";
+import "tippy.js/animations/scale.css";
+import "tippy.js/dist/tippy.css";
+
+
+
+function getCallback(callback) {
+  return function (word, event) {
+    const isActive = callback !== "onWordMouseOut";
+    const element = event.target;
+    const text = select(element);
+    text
+      .on("click", () => {
+        if (isActive) {
+          window.open(`https://duckduckgo.com/?q=${word.text}`, "_blank");
+        }
+      })
+      .transition()
+      .attr("background", "white")
+      .attr("font-size", isActive ? "150%" : "100%")
+      .attr("text-decoration", isActive ? "underline" : "none");
+  };
+}
+const words = [
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+
+  {
+    text: 'told',
+    value: 40,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+]
+const callbacks = {
+  getWordTooltip: (word) =>
+    `The word "${word.text}" appears ${word.value} times.`,
+  onWordClick: getCallback("onWordClick"),
+  onWordMouseOut: getCallback("onWordMouseOut"),
+  onWordMouseOver: getCallback("onWordMouseOver")
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <ReactWordcloud callbacks={callbacks} words={words} />
+      
     </div>
   );
 }

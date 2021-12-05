@@ -280,7 +280,7 @@ function getCallback(callback) {
 export default function Wordcloud() {
   return (
     <div>
-      <Link to="/subject/apple">Apple</Link>;
+      <Link to="/subject/stack overflow">Apple</Link>;
       <ReactWordcloud callbacks={callbacks} words={words} />
     </div>
   );

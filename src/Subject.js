@@ -1,8 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import Definition from "./Definition";
+import TeachingMethods from "./TeachingMethods";
 
 export default function Subject() {
   const { subject } = useParams();
-  console.log(subject);
-  return <div>Hi {subject}</div>;
+
+  return (
+    <div className="container">
+      <Definition subject={subject} />
+      <TeachingMethods subject={subject} />
+    </div>
+  );
 }

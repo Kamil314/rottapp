@@ -1,5 +1,4 @@
 import React from "react";
-import ReactWordcloud from "react-wordcloud";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Wordcloud from "./WordCloud";
 import Subject from "./Subject";

@@ -2,23 +2,23 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function TeachingMethods(props) {
+export default function EduSource(props) {
   const [definition, setDefinition] = useState("");
 
   let body = {
     search_text: props.subject,
     filters: [],
-    page_size: "10",
-    page: "1",
+    page_size: 10,
+    page: 1,
   };
 
   useEffect(() => {
     axios
-      .post(`https://edusources.nl/api/v1/materials/search/`, body, {
+      .post("https://edusources.nl/api/v1/materials/search/", body, {
         headers: {
-          Vary: "Accept",
-          Allow: "POST, OPTIONS",
           "Content-Type": "application/json",
+          "Access-Control-Allow-Headers": "*",
+          "Access-Control-Allow-Origin": "*",
         },
       })
       .then((res) => {

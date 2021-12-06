@@ -17,7 +17,7 @@ export default function Definition(props) {
 
   return (
     <div>
-      <h2>{props.subject}</h2>
+      <h2>Definition of: {props.subject}</h2>
       <p>{definition}</p> source: Wikipedia
     </div>
   );

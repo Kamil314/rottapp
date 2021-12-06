@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { select } from "d3-selection";
+import "d3-transition";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import ReactWordcloud from "react-wordcloud";
 import "tippy.js/animations/scale.css";
 import "tippy.js/dist/tippy.css";
-import "d3-transition";
-import ReactWordcloud from "react-wordcloud";
 
 
 
@@ -262,28 +262,17 @@ let wordski = '';
   };
   function getCallback(callbacks) {
     return function (word, event) {
-      const isActive = callbacks !== "onWordClick";
-      const element = event.target;
-      const text = select(element);
-      console.log(word.text);
       wordski = word.text;
-      setWordsState(wordski);
-      text
-        .on("click", () => {
-          if (isActive) {
-            <Link to={`/subject/${wordski}`}>{wordski}</Link>;
-          }
-        })
-        .transition()
+        setWordsState(wordski);
     };
   }
 
-   
+   console.log('wordsState', wordsState);
   return (
-    <div>
-      <Link to={`/subject/${wordsState}`}>      
+    <div className="">
+      <Link to={wordsState && `/subject/${wordsState}`} >      
       <ReactWordcloud callbacks={callbacks} words={words} />
-      </Link>;
+      </Link>
     </div>
   );
 }

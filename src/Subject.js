@@ -4,16 +4,18 @@ import Definition from "./Definition";
 import EduSource from "./EduSource";
 import TwitterFeed from "./TwitterFeed";
 import GoogleScholar from "./GoogleScholar";
+import "./Subject.css";
+
 
 export default function Subject() {
   const { subject } = useParams();
 
   return (
-    <div className="container">
-      <Definition subject={subject} />
-      <EduSource subject={subject} />
-      <TwitterFeed subject={subject} />
-      <GoogleScholar subject={subject} />
+    <div className="flex-container">
+      <div className="flex-item" id="definition"><Definition subject={subject} /></div>
+      <div className="flex-item" id="edu"><EduSource subject={subject} /></div>
+      <div className="flex-item" id="twitter"><TwitterFeed subject={subject} /></div>
+      <div className="flex-item" id="scholar"><GoogleScholar subject={subject} /></div>    
     </div>
   );
 }

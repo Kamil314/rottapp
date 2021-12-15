@@ -6,7 +6,7 @@ export default function EduSource(props) {
   const [definition, setDefinition] = useState("");
 
   let body = {
-    search_text: props.subject,
+    search_text: "github",
     filters: [],
     page_size: 10,
     page: 1,
@@ -14,13 +14,7 @@ export default function EduSource(props) {
 
   useEffect(() => {
     axios
-      .post("https://edusources.nl/api/v1/materials/search/", body, {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Headers": "*",
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
+      .post("https://edusources.nl/api/v1/materials/search/", body)
       .then((res) => {
         const response = res;
         var key = Object.keys(response)[0];

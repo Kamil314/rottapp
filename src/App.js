@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <Router>
-      <Navigationbar/>
+        <Navigationbar />
         <Routes>
           <Route path="/subject/:subject" element={<Subject />} />
           <Route path="/" exact element={<Wordcloud />} />

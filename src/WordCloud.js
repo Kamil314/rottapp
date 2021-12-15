@@ -9,245 +9,211 @@ import "tippy.js/dist/tippy.css";
 export default function Wordcloud() {
   const words = [
     {
-      text: "told",
+      text: "Python Language",
       value: 40,
     },
     {
-      text: "mistake",
+      text: ".NET framework",
       value: 11,
     },
     {
-      text: "thought",
+      text: "React Frameword",
       value: 16,
     },
     {
-      text: "bad",
+      text: "Angular",
       value: 17,
     },
     {
-      text: "told",
+      text: "Vue",
       value: 40,
     },
     {
-      text: "mistake",
+      text: "Linear Regression",
       value: 11,
     },
     {
-      text: "thought",
+      text: "SQL",
       value: 16,
     },
     {
-      text: "bad",
+      text: "Data science",
       value: 17,
     },
     {
-      text: "told",
+      text: "Design patterns",
       value: 40,
     },
     {
-      text: "mistake",
+      text: "MySQL",
       value: 11,
     },
     {
-      text: "thought",
+      text: "Postgres",
       value: 16,
     },
     {
-      text: "bad",
+      text: "Databases",
       value: 17,
     },
     {
-      text: "told",
+      text: "NoSQL",
       value: 40,
     },
     {
-      text: "mistake",
+      text: "CosmosDB",
       value: 11,
     },
     {
-      text: "thought",
+      text: "DynamoDB",
       value: 16,
     },
     {
-      text: "bad",
+      text: "OOP",
       value: 17,
     },
     {
-      text: "told",
+      text: "Kafka",
       value: 40,
     },
     {
-      text: "mistake",
+      text: "RabbitMQ",
       value: 11,
     },
     {
-      text: "thought",
+      text: "Java",
       value: 16,
     },
     {
-      text: "bad",
+      text: "JavaScript",
       value: 17,
     },
     {
-      text: "told",
+      text: "Ruby on Rails",
       value: 40,
     },
     {
-      text: "mistake",
+      text: "Matlab",
       value: 11,
     },
     {
-      text: "thought",
+      text: "Scala",
       value: 16,
     },
     {
-      text: "bad",
+      text: "Apache Spark",
       value: 17,
     },
     {
-      text: "told",
+      text: "MongoDB",
       value: 40,
     },
     {
-      text: "mistake",
+      text: "Lamba architectuur",
       value: 11,
     },
     {
-      text: "thought",
+      text: "Microsoft Azure",
       value: 16,
     },
     {
-      text: "bad",
+      text: "Amazon Web Services",
       value: 17,
     },
     {
-      text: "told",
+      text: "Google Cloud Platform",
       value: 40,
     },
     {
-      text: "mistake",
+      text: "Apple Computers",
       value: 11,
     },
     {
-      text: "thought",
+      text: "Microsoft",
       value: 16,
     },
     {
-      text: "bad",
+      text: "REST-API",
       value: 17,
     },
     {
-      text: "told",
+      text: "GRPC",
       value: 40,
     },
     {
-      text: "mistake",
+      text: "MQTT",
       value: 11,
     },
     {
-      text: "thought",
+      text: "NGINX",
       value: 16,
     },
     {
-      text: "bad",
+      text: "HTML",
       value: 17,
     },
     {
-      text: "told",
+      text: "CSS",
       value: 40,
     },
     {
-      text: "mistake",
+      text: "Twitter",
       value: 11,
     },
     {
-      text: "thought",
+      text: "Facebook",
       value: 16,
     },
     {
-      text: "bad",
+      text: "Unit testing",
       value: 17,
     },
     {
-      text: "told",
+      text: "Intergration testing",
       value: 40,
     },
     {
-      text: "mistake",
+      text: "Web Development",
       value: 11,
     },
     {
-      text: "thought",
+      text: ".NET 6",
       value: 16,
     },
     {
-      text: "bad",
+      text: "GitHub Copilot",
       value: 17,
     },
     {
-      text: "told",
+      text: "GitHub",
       value: 40,
     },
     {
-      text: "mistake",
+      text: "GitLab",
       value: 11,
     },
     {
-      text: "thought",
+      text: "Entity Framework",
       value: 16,
     },
     {
-      text: "bad",
+      text: "ORM",
       value: 17,
     },
     {
-      text: "told",
+      text: "SQL Injection Attack",
       value: 40,
     },
     {
-      text: "mistake",
+      text: "CORS",
       value: 11,
     },
     {
-      text: "thought",
+      text: "XSS attack",
       value: 16,
     },
     {
-      text: "bad",
-      value: 17,
-    },
-
-    {
-      text: "told",
-      value: 40,
-    },
-    {
-      text: "mistake",
-      value: 11,
-    },
-    {
-      text: "thought",
-      value: 16,
-    },
-    {
-      text: "bad",
-      value: 17,
-    },
-
-    {
-      text: "told",
-      value: 40,
-    },
-    {
-      text: "mistake",
-      value: 11,
-    },
-    {
-      text: "thought",
-      value: 16,
-    },
-    {
-      text: "bad",
+      text: "TailWind",
       value: 17,
     },
   ];
@@ -262,12 +228,16 @@ export default function Wordcloud() {
       setWordsState(wordski);
     };
   }
+  const options = {
+    rotations: 2,
+    rotationAngles: [0, 0],
+  };
 
   console.log("wordsState", wordsState);
   return (
     <div className="">
       <Link to={wordsState && `/subject/${wordsState}`}>
-        <ReactWordcloud callbacks={callbacks} words={words} />
+        <ReactWordcloud callbacks={callbacks} words={words} options={options} />
       </Link>
     </div>
   );

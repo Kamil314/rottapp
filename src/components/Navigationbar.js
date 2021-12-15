@@ -12,7 +12,7 @@ function Navigationbar() {
       <Navbar bg="light" expand="lg">
         <Container fluid>
           <Navbar.Brand>
-            <Link to="/">Strona glowna</Link>
+            <Link to="/">Home</Link>
           </Navbar.Brand>{" "}
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -30,9 +30,10 @@ function Navigationbar() {
                 className="me-2"
                 aria-label="Search"
               />
-              
-              <Button variant="outline-success"><Link to='/subject/button'>Zoek</Link>    
-</Button>
+
+              <Button variant="outline-success">
+                <Link to="/subject/button">Zoek</Link>
+              </Button>
             </Form>
           </Navbar.Collapse>
         </Container>

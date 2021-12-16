@@ -15,10 +15,21 @@ export default function Definition(props) {
     });
   });
 
+  const MAX_LENGTH = 250;
+
   return (
     <div>
       <h2>Definition of: {props.subject}</h2>
-      <p>{definition}</p> source: Wikipedia
+      <div>
+        {definition.length > MAX_LENGTH ? (
+          <div>
+            {`${definition.substring(0, MAX_LENGTH)}... `}
+            <a href="#">Read more</a>
+          </div>
+        ) : (
+          <p>{definition}</p>
+        )}
+      </div>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import { select } from "d3-selection";
 import "d3-transition";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";

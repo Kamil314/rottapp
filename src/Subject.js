@@ -11,16 +11,16 @@ export default function Subject() {
 
   return (
     <div className="flex-container">
-      <div className="flex-item" id="definition">
+      <div className="flex-item" id="top-left">
         <Definition subject={subject} />
       </div>
-      <div className="flex-item" id="edu">
+      <div className="flex-item" id="top-right">
         <MoocOverview subject={subject} />
       </div>
-      <div className="flex-item" id="twitter">
+      <div className="flex-item" id="bottom-left">
         <StudentPresentations subject={subject} />
       </div>
-      <div className="flex-item" id="scholar">
+      <div className="flex-item" id="bottom-right">
         <KnowledgeWithinOrg subject={subject} />
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./Definition.css";
 
 export default function Definition(props) {
   const [definition, setDefinition] = useState("");
@@ -18,7 +19,7 @@ export default function Definition(props) {
   const MAX_LENGTH = 250;
 
   return (
-    <div>
+    <div className="definition">
       <h2>Definition of: {props.subject}</h2>
       <div>
         {definition.length > MAX_LENGTH ? (

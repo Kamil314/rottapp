@@ -13,48 +13,49 @@
 
 .flex-item a,
 .flex-item a:hover {
-  color: chartreuse;
+  color: #000;
+  font-style: italic;
 }
 
 .flex-item a:visited {
-  color: springgreen;
+  color: rgb(0, 38, 255);
 }
 
-#definition {
+#top-left {
   transition: all ease-in 0.2s;
   background-color: #fda649;
 }
 
-#definition:hover {
+#top-left:hover {
   background-color: #e29440;
 }
 
-#edu {
+#top-right {
   transition: all ease-in 0.2s;
   background-color: #f4e683;
 }
 
-#edu:hover {
+#top-right:hover {
   background-color: #d3c872;
 }
 
-#twitter {
+#bottom-left {
   transition: all ease-in 0.2s;
   background-color: #4db3e4;
   color: white;
 }
 
-#twitter:hover {
+#bottom-left:hover {
   background-color: #439bc4;
 }
 
-#scholar {
+#bottom-right {
   transition: all ease-in 0.2s;
   background-color: #b83c70;
   color: white;
 }
 
-#scholar:hover,
+#bottom-right:hover,
 :checked {
   background-color: #8a2c53;
 }

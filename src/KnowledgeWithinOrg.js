@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./KnowledgeWithinOrg.css";
 
 export default function KnowledgeWithinOrg(props) {
   const [natureResults, setNatureResults] = useState([]);
@@ -16,6 +17,15 @@ export default function KnowledgeWithinOrg(props) {
   return (
     <div>
       <h2>Colleagues with knowledge about: {props.subject}</h2>
+    <div className="contact-container">
+    <div className="teacher-img">
+        <img
+          src="/images/teacher-picture.jpeg"
+          width="75"
+          height="75"
+          alt=""
+        />
+      </div>
       <div className="teacher">
         <h5>Name: Albus Dumbledore</h5>
         <span>E-mail: albus.dumbledore@hogwarts.edu</span>
@@ -24,10 +34,12 @@ export default function KnowledgeWithinOrg(props) {
           Areas of expertise: Web Development, Backend Development, Databases
         </span>
         <br />
+        </div>
+        <div className="teacher-img">
         <img
           src="/images/teacher-picture.jpeg"
-          width="100"
-          height="100"
+          width="75"
+          height="75"
           alt=""
         />
       </div>
@@ -37,10 +49,13 @@ export default function KnowledgeWithinOrg(props) {
         <br />
         <span>Areas of expertise: DevOps, IoT, Databases</span>
         <br />
+        </div>
+        
+        <div className="teacher-img">
         <img
           src="/images/teacher-picture.jpeg"
-          width="100"
-          height="100"
+          width="75"
+          height="75"
           alt=""
         />
       </div>
@@ -50,10 +65,13 @@ export default function KnowledgeWithinOrg(props) {
         <br />
         <span>Areas of expertise: Big data, Machine Learning, Databases</span>
         <br />
+        </div>
+        
+        <div className="teacher-img">
         <img
           src="/images/teacher-picture.jpeg"
-          width="100"
-          height="100"
+          width="75"
+          height="75"
           alt=""
         />
       </div>
@@ -65,10 +83,13 @@ export default function KnowledgeWithinOrg(props) {
           Areas of expertise: Cloud Migrations, Backend Development, Databases
         </span>
         <br />
+        </div>
+        
+        <div className="teacher-img">
         <img
           src="/images/teacher-picture.jpeg"
-          width="100"
-          height="100"
+          width="75"
+          height="75"
           alt=""
         />
       </div>
@@ -80,13 +101,9 @@ export default function KnowledgeWithinOrg(props) {
           Areas of expertise: Cloud Migrations, Backend Development, Databases
         </span>
         <br />
-        <img
-          src="/images/teacher-picture.jpeg"
-          width="100"
-          height="100"
-          alt=""
-        />
-      </div>
+        </div>
+        
+    </div>
     </div>
   );
 }
